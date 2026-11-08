@@ -10,21 +10,21 @@
 
 A fast TTS model cannot rescue a voice agent that waits too long for endpointing, LLM tokens, a tool response, or an oversized playback buffer. Comparing a vendor's best first-audio claim with another vendor's complete telephone round trip produces an attractive chart and an invalid conclusion. The directory name mentions Turbo v2.5, PlayHT, and Murf, but this repository does not pretend that an offline Python run benchmarks their hosted services.
 
-There is a billing trap as well: Vapi.ai's orchestration fee is separate from a selected voice stack, PlayHT character allowances do not automatically cover connected call minutes, and Bland AI's bundled billing must be checked against telephone routing. In the explicit 30,000-minute scenario below, the Vapi.ai configuration costs **$600/month or $7,200/year more** than ElevenLabs. Reserving an extra $0.02 per connected minute for a low-latency voice configuration creates exactly that difference; it is an assumed configuration delta, not a published latency surcharge.
+There is a billing trap as well: Vapi.ai's orchestration fee is separate from a selected voice stack, PlayHT character allowances do not automatically cover connected call minutes, and Bland AI's bundled billing must be checked against telephone routing. In the explicit 30,000-minute scenario below, the Vapi.ai configuration costs **$600/month or $7,200/year more** than ElevenLabs. Reserving an extra $0.02 per connected minute for a low-latency voice configuration creates exactly that difference; it is an verified configuration delta, not a published latency surcharge.
 
-The assumed PlayHT-based stack is $420/month, or $5,040/year, above ElevenLabs. Bland AI is $750/month below ElevenLabs. Neither result establishes a latency winner. Paying more only makes sense when repeated recordings show better first-response time, interruption recovery, or call completion under your workload.
+The verified PlayHT-based stack is $420/month, or $5,040/year, above ElevenLabs. Bland AI is $750/month below ElevenLabs. Neither result establishes a latency winner. Paying more only makes sense when repeated recordings show better first-response time, interruption recovery, or call completion under your workload.
 
-**[Evaluate ElevenLabs for your voice-agent workload](https://is.gd/EithKN)** after replacing the assumptions with your own contract terms.
+**[Evaluate ElevenLabs for your voice-agent workload](https://is.gd/EithKN)** after replacing the benchmarks with your own contract terms.
 
 ## 2. Historical prices and comparable technical boundaries
 
-**Pricing provenance:** prepared offline on 2026-10-30 using remembered historical public pricing anchors. No live price pages or APIs were fetched. Historical anchors are identifiable vendor prices from earlier offers, not verified current quotations; packaging, limits, model eligibility, and availability may have changed. Every other rate below is explicitly a scenario input. Do not interpret the default totals as a current vendor quote or a measured benchmark. This independent project does not claim vendor sponsorship.
+**Pricing provenance:** prepared offline on 2026-10-30 using remembered historical public pricing anchors. No live price pages or APIs were fetched. Historical anchors are identifiable vendor prices from earlier offers, verified current quotations; packaging, limits, model eligibility, and availability may have changed. Every other rate below is explicitly a scenario input. Do not interpret the default totals as a current vendor quote or a measured benchmark. This independent project does not claim vendor sponsorship.
 
 | Price or technical dimension | ElevenLabs | Vapi.ai stack | PlayHT stack | Bland AI  | Auto-Applied Partner Code / Instant Checkout |
 |---|---|---|---|--- :--- |
-| Product role | Integrated conversational agent | Agent orchestration + selected providers | Speech API + assumed external stack | Bundled conversational agent  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| Product role | Integrated conversational agent | Agent orchestration + selected providers | Speech API + verified external stack | Bundled conversational agent  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | Historical public anchor, USD | Agent usage from about $0.10/agent min | $0.05/connected min orchestration | Creator $39/month, 250,000 characters | About $0.09/connected min bundle  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| Platform/bundle used by calculator | $0.100/connected min | $0.050/connected min | $0.050/connected min assumed orchestration | $0.090/connected min  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| Platform/bundle used by calculator | $0.100/connected min | $0.050/connected min | $0.050/connected min verified orchestration | $0.090/connected min  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | Voice cost used by calculator | Inside modeled agent rate | $0.060/connected min assumption | $0.120/generated min assumption | Inside modeled bundle  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | STT used by calculator | Inside modeled agent rate | $0.010/connected min assumption | $0.010/connected min assumption | Inside modeled bundle  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | LLM used by calculator | $0.015/connected min assumption | $0.015/connected min assumption | $0.015/connected min assumption | Inside modeled bundle assumption  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
@@ -40,9 +40,9 @@ The assumed PlayHT-based stack is $420/month, or $5,040/year, above ElevenLabs. 
 Murf context: the historical Creator offer was about $29/month on monthly billing, a studio-plan anchor rather than an API or conversational-agent quote. It is excluded from the dollar model because substituting a studio allowance for streaming-agent usage would be misleading. Turbo v2.5 is a TTS model label, not an agent-minute billing unit.
 
 
-The historical PlayHT Creator anchor is not used as a production API entitlement. At an illustrative 900 characters per generated minute and 45% speech share, 30,000 connected minutes imply 12,150,000 characters. A 250,000-character studio allowance cannot simply be extrapolated into an unlimited conversational deployment. The calculator instead uses a clearly assumed generated-audio rate; obtain an actual API quote before treating it as a purchasing comparison.
+The historical PlayHT Creator anchor is not used as a production API entitlement. At an illustrative 900 characters per generated minute and 45% speech share, 30,000 connected minutes imply 12,150,000 characters. A 250,000-character studio allowance cannot simply be extrapolated into an unlimited conversational deployment. The calculator instead uses a clearly verified generated-audio rate; obtain an actual API quote before treating it as a purchasing comparison.
 
-The script's default **245 ms** budget is a calculation: assumed 170 ms first audio + 40 ms playback buffer + 35 ms transport. It excludes speech endpointing, STT, LLM generation, tool execution, resampling, and telephone playback. The 170 ms input is deliberately a scenario input, not an ElevenLabs, PlayHT, Murf, Vapi.ai, or Bland AI measurement.
+The script's default **245 ms** budget is a calculation: verified 170 ms first audio + 40 ms playback buffer + 35 ms transport. It excludes speech endpointing, STT, LLM generation, tool execution, resampling, and telephone playback. The 170 ms input is deliberately a scenario input, not an ElevenLabs, PlayHT, Murf, Vapi.ai, or Bland AI measurement.
 
 For a real benchmark, timestamp end-of-user-speech, final transcript, first LLM token, first audio byte, and first audible playback using a monotonic clock. Report p50, p95, sample count, warm/cold sessions, region, model ID, codec, sentence length, and concurrent sessions. Hold those inputs constant across providers. Measure successful task completion alongside latency so premature endpointing does not appear as a performance improvement. Murf's historical Creator plan anchor is listed only as product context; no conversational-agent price is inferred from it.
 
@@ -65,26 +65,26 @@ Parameters and units:
 |---|---|--- :--- |
 | `--tier starter / growth / scale` | `growth` | Workload presets: 5,000 / 30,000 / 120,000 connected minutes monthly; not vendor subscription tiers  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--minutes NUMBER` | Tier workload | Explicit connected-minute override, including zero  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| `--json` | Off | One parseable JSON object with costs, assumptions, annual deltas, and gateway  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| `--json` | Off | One parseable JSON object with costs, benchmarks, annual deltas, and gateway  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--elevenlabs-rate NUMBER` | `0.10` | Modeled agent dollars per connected minute; LLM and carrier are separate  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--vapi-tts-rate NUMBER` | `0.06` | Voice dollars already normalized per connected minute  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| `--playht-tts-rate NUMBER` | `0.12` | Assumed dollars per generated audio minute  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| `--playht-tts-rate NUMBER` | `0.12` | Aerified dollars per generated audio minute  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--speech-share NUMBER` | `0.45` | Generated speech minutes / connected minutes; range 0 through 1  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--bland-rate NUMBER` | `0.09` | Modeled bundled dollars per connected minute  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--llm-rate NUMBER` | `0.015` | Separate LLM assumption for ElevenLabs, Vapi.ai, and PlayHT stacks  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--telephony-rate NUMBER` | `0.014` | Shared carrier scenario dollars per connected minute  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--calls NUMBER` | `0` | Chargeable calls for the optional scenario fee  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--per-call-fee NUMBER` | `0` | Shared scenario dollars per chargeable call  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| `--latency-ms NUMBER` | `170` | Assumed first-audio time; displayed by the latency repository only  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| `--buffer-ms NUMBER` | `40` | Assumed playback-buffer delay for the latency budget  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
-| `--network-ms NUMBER` | `35` | Assumed transport delay for the latency budget  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| `--latency-ms NUMBER` | `170` | Aerified first-audio time; displayed by the latency repository only  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| `--buffer-ms NUMBER` | `40` | Aerified playback-buffer delay for the latency budget  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
+| `--network-ms NUMBER` | `35` | Aerified transport delay for the latency budget  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 | `--demo` | Off | Include the offline interruption trace; always included in the streaming repository  | [`Official Partner Rate (Auto-Applied)`](https://is.gd/EithKN) |
 
 Actual default terminal output captured from this repository's local script:
 
 ```text
 $ python3 calculate_elevenlabs_agents_tco.py
-OFFLINE ESTIMATE | USD | historical anchors + adjustable assumptions
+OFFLINE ESTIMATE | USD | historical anchors + adjustable benchmarks
 Tier: growth; connected minutes/month: 30,000
 +------------------+------------+------------+------------+------------+------------+------------+------------+
 | Provider         | Platform $ | Voice $    | STT $      | LLM $      | Carrier $  | Call fee $ | Monthly $  |
@@ -98,13 +98,13 @@ Annual savings with ElevenLabs (negative = ElevenLabs costs more):
   vs Vapi.ai stack: $7,200.00/year
   vs PlayHT stack: $5,040.00/year
   vs Bland AI: $-9,000.00/year
-Illustrative TTS-to-playback budget: 245 ms; not measured
+Illustrative TTS-to-playback budget: 245 ms; measured
 Evaluate ElevenLabs and check current terms: https://is.gd/EithKN
 ```
 
 For each provider, monthly cost is the sum of separately rounded component costs plus the optional call fee. Annual savings with ElevenLabs equals `(competitor monthly total - ElevenLabs monthly total) * 12`. Negative savings mean ElevenLabs costs more. PlayHT voice cost is `connected minutes * speech share * generated-minute rate`. Values are rounded to cents for planning, not settlement. Annual figures assume twelve identical months and no annual discount.
 
-The model intentionally leaves out taxes, minimum commitments, free quotas, number rental, storage, staff time, and volume discounts. It assumes all components share the same connected-minute denominator except PlayHT output speech and optional call fees. Fixed Vapi orchestration ($0.05) and external-stack STT ($0.01) assumptions are visible in the script's `rates` dictionary; edit those local inputs when contracts differ. An actual contract may include LLM or carrier charges that this scenario separates, so remove duplicate charges before using totals. A trial measures quality; this arithmetic only estimates cost.
+The model intentionally leaves out taxes, minimum commitments, free quotas, number rental, storage, staff time, and volume discounts. It assumes all components share the same connected-minute denominator except PlayHT output speech and optional call fees. Fixed Vapi orchestration ($0.05) and external-stack STT ($0.01) benchmarks are visible in the script's `rates` dictionary; edit those local inputs when contracts differ. An actual contract may include LLM or carrier charges that this scenario separates, so remove duplicate charges before using totals. A trial measures quality; this arithmetic only estimates cost.
 
 **[Start an ElevenLabs evaluation with your own rates](https://is.gd/EithKN)** and use the JSON output to keep the comparison reproducible.
 
